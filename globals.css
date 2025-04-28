@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 240, 255, 250;
+  
+  /* Custom color scheme - Blue and Green */
+  --primary-blue: 37, 99, 235;
+  --secondary-blue: 59, 130, 246;
+  --light-blue: 191, 219, 254;
+  
+  --primary-green: 16, 185, 129;
+  --secondary-green: 5, 150, 105;
+  --light-green: 209, 250, 229;
+  
+  --neutral-white: 255, 255, 255;
+  --neutral-light: 243, 244, 246;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 30, 60;
+    --background-end-rgb: 0, 40, 30;
+    
+    /* Dark mode custom colors */
+    --primary-blue: 59, 130, 246;
+    --secondary-blue: 96, 165, 250;
+    --light-blue: 37, 99, 235;
+    
+    --primary-green: 16, 185, 129;
+    --secondary-green: 52, 211, 153;
+    --light-green: 5, 150, 105;
+    
+    --neutral-white: 30, 41, 59;
+    --neutral-light: 51, 65, 85;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Custom utility classes for our color scheme */
+.bg-primary-blue {
+  background-color: rgb(var(--primary-blue));
+}
+
+.bg-secondary-blue {
+  background-color: rgb(var(--secondary-blue));
+}
+
+.bg-light-blue {
+  background-color: rgb(var(--light-blue));
+}
+
+.bg-primary-green {
+  background-color: rgb(var(--primary-green));
+}
+
+.bg-secondary-green {
+  background-color: rgb(var(--secondary-green));
+}
+
+.bg-light-green {
+  background-color: rgb(var(--light-green));
+}
+
+.text-primary-blue {
+  color: rgb(var(--primary-blue));
+}
+
+.text-secondary-blue {
+  color: rgb(var(--secondary-blue));
+}
+
+.text-primary-green {
+  color: rgb(var(--primary-green));
+}
+
+.text-secondary-green {
+  color: rgb(var(--secondary-green));
+}
+
+.border-primary-blue {
+  border-color: rgb(var(--primary-blue));
+}
+
+.border-primary-green {
+  border-color: rgb(var(--primary-green));
+}
+
+/* Custom component styles */
+.card {
+  @apply p-6 border rounded-lg shadow-sm bg-white dark:bg-zinc-800/50 dark:border-neutral-700 mb-6;
+}
+
+.btn-primary {
+  @apply px-4 py-2 bg-primary-blue text-white rounded-md hover:bg-secondary-blue focus:outline-none focus:ring-2 focus:ring-light-blue focus:ring-offset-2 dark:focus:ring-offset-zinc-800 disabled:opacity-50;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 bg-primary-green text-white rounded-md hover:bg-secondary-green focus:outline-none focus:ring-2 focus:ring-light-green focus:ring-offset-2 dark:focus:ring-offset-zinc-800 disabled:opacity-50;
+}
+
+.input-field {
+  @apply flex-grow p-2 border border-gray-300 rounded-md dark:bg-zinc-700 dark:border-neutral-600 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-secondary-blue;
+}
+
+.header-gradient {
+  @apply fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-r from-light-blue via-white to-light-green pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30;
+}
+
+.footer-text {
+  @apply text-xs text-gray-500 dark:text-gray-400 text-center mt-8 pb-4;
+}
